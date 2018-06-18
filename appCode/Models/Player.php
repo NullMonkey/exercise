@@ -2,7 +2,9 @@
 
 namespace excercise\Models;
 
-class Player
+use JsonSerializable;
+
+class Player implements JsonSerializable
 {
     private $name;
     private $age;
@@ -17,7 +19,16 @@ class Player
         $this->job = $job;
         $this->salary = $salary;
 
-        echo __CLASS__ . ' Class<br />';
-        echo $this->name;
+        //echo __CLASS__ . ' Class<br />';
+        //echo $this->name;
     }
+
+    public function jsonSerialize()
+    {
+        $vars = get_object_vars($this);
+
+        return $vars;
+    }
+
+
 }
