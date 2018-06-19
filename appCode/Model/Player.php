@@ -16,8 +16,8 @@ class Player implements JsonSerializable
         $this->age = $age;
         $this->job = $job;
         $this->salary = $salary;
-       echo __CLASS__ . ' Class<br />';
-       echo $this->name;
+      // echo __CLASS__ . ' Class<br />';
+       //echo $this->name;
     }
     public function jsonSerialize()
     {
